@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -29,7 +29,7 @@ function LoginForm() {
   const [error, setError] = useState<string>('');
   const [isPending, startTransition] = useTransition();
   
-  const router = useRouter();
+  // const router = useRouter();
   const searchParams = useSearchParams();
   const redirectUrl = searchParams.get('redirect') || '/dashboard';
 
@@ -48,6 +48,7 @@ function LoginForm() {
           setError(result.error || 'Login failed');
         }
       } catch (err) {
+        console.log(err)
         setError('An unexpected error occurred');
       }
     });
@@ -114,7 +115,7 @@ function LoginForm() {
 
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600">
-                Don't have an account?{' '}
+                Dont have an account?{' '}
                 <Link
                   href="/signup"
                   className="font-medium text-blue-600 hover:text-blue-500"

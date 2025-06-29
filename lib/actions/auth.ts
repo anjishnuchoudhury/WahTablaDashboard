@@ -72,6 +72,7 @@ export async function loginAction(credentials: LoginCredentials): Promise<{
 
     return { success: true };
   } catch (error) {
+    console.log(error)
     return {
       success: false,
       error: 'An unexpected error occurred'
@@ -104,6 +105,7 @@ export async function signupAction(credentials: SignupCredentials): Promise<{
 
     return { success: true };
   } catch (error) {
+    console.log(error)
     return {
       success: false,
       error: 'An unexpected error occurred'

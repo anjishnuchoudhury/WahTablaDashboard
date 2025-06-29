@@ -1,6 +1,6 @@
 // lib/auth.ts
 import { cookies } from 'next/headers';
-import { AuthTokens, Admin, ApiResponse, AuthResponse } from '@/types/auth';
+import { AuthTokens, Admin, ApiResponse } from '@/types/auth';
 import { RequestInit } from 'next/dist/server/web/spec-extension/request';
 import jwt from 'jsonwebtoken'
 
@@ -211,6 +211,7 @@ export async function validateAuth(): Promise<{ admin: Admin; tokens: AuthTokens
           const admin = await getCurrentAdmin(newTokens.adminAccessToken);
           return { admin, tokens: newTokens };
         } catch (refreshError) {
+          console.log(refreshError)
           // Refresh failed, clear cookies
           await clearAuthCookies();
           return null;
@@ -235,6 +236,7 @@ export async function validateAuthSafe(): Promise<{ admin: Admin; tokens: AuthTo
     const admin = await getCurrentAdmin(tokens.adminAccessToken);
     return { admin, tokens };
   } catch (error) {
+    console.log(error)
     // Return null if validation fails, let client-side handle refresh
     return null;
   }

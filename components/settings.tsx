@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import * as z from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+// import Image from "next/image";
+// import * as z from "zod";
+// import { useForm } from "react-hook-form";
+// import { zodResolver } from "@hookform/resolvers/zod";
 import { ColumnDef } from "@tanstack/react-table";
 import { UserDataTable } from "./table-components/user-data-table";
 import {
@@ -13,7 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+// import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 // import {
@@ -24,21 +24,21 @@ import { Button } from "@/components/ui/button";
 //   DialogTitle,
 //   DialogTrigger,
 // } from "@/components/ui/dialog";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormLabel,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
+// import {
+//   Form,
+//   FormControl,
+//   FormField,
+//   FormLabel,
+//   FormItem,
+//   FormMessage,
+// } from "@/components/ui/form";
 import { useTransition, useState } from "react";
 import { useAuth } from "@/contexts/auth-context";
 import { Admin } from "@/types/auth";
@@ -54,25 +54,25 @@ const SettingsPageComponents = <TData extends Admin, TValue extends object>({
 }: ProductDataTableProps<TData, TValue>) => {
   const { admin } = useAuth();
 
-  const [isPending, startTransition] = useTransition();
-  const [error, setError] = useState<string | undefined>();
-  const [success, setSuccess] = useState<string | undefined>();
+  // const [isPending, startTransition] = useTransition();
+  // const [error, setError] = useState<string | undefined>();
+  // const [success, setSuccess] = useState<string | undefined>();
 
-  const onSubmit = () => {
-    startTransition(() => {
-      // settings(values)
-      //   .then((data) => {
-      //     if (data.error) {
-      //       setError(data.error);
-      //     }
-      //     if (data.success) {
-      //       update();
-      //       setSuccess(data.success);
-      //     }
-      //   })
-      //   .catch(() => setError("Something went wrong!"));
-    });
-  };
+  // const onSubmit = () => {
+  //   startTransition(() => {
+  //     // settings(values)
+  //     //   .then((data) => {
+  //     //     if (data.error) {
+  //     //       setError(data.error);
+  //     //     }
+  //     //     if (data.success) {
+  //     //       update();
+  //     //       setSuccess(data.success);
+  //     //     }
+  //     //   })
+  //     //   .catch(() => setError("Something went wrong!"));
+  //   });
+  // };
 
   return (
     <div className="w-full flex flex-col justify-center items-start gap-6 px-8 pt-10">

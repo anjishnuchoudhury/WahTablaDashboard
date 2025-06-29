@@ -38,6 +38,11 @@ export const userColumns = [
     id: "actions",
     cell: ({ row }) => {
       const user = row.original;
+      if(user.role === 'user'){
+        return(
+          <Button>Update role to admin</Button>
+        )
+      }
 
       return (
         // <Dialog>
@@ -65,7 +70,7 @@ export const userColumns = [
         //   </DialogContent>
         // </Dialog>
 
-        <Button>Update role</Button>
+        <Button>Update role user</Button>
       );
     },
   }),
