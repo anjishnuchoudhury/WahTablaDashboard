@@ -35,9 +35,12 @@ export default function DashboardPage() {
           <h2 className="text-2xl font-bold text-gray-900">Dashboard</h2>
           <p className="text-gray-600">Manage your account and preferences</p>
         </div>
-         <Link href="/dashboard/temp">
+        <div className="my-5">
+          <Link href="/dashboard/temp">
           <Button className="hover:bg-green-600">Click me</Button>
         </Link>
+        </div>
+         
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
